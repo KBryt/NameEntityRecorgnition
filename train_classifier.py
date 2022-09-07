@@ -1,6 +1,6 @@
 import sys, csv
 from tokenizer import WordTokenizer
-from classifier import ProductClassifier
+from classify import ProductClassifier
 
 MAX_TEXTS = 1000000
 
