@@ -24,12 +24,12 @@ def process(row, tokenizer, classifier, ner):
     """
     # Classify
     data = tokenizer.tokenize([row['name'] + ' ' + row['description']])
-    categories = classify.classify(data)[0]
+    categories = classifier.classify(data)[0]
     row['category'] = max(list(categories.items()), key=itemgetter(1))[0]
 
     # Extract entities
     data = tokenizer.tokenize([row['name']])
-    tags = NER.tag(data)[0]
+    tags = ner.tag(data)[0]
     brand, brand_started = '', False
     for word, tag in zip(row['name'].split(' '), tags):
         max_tag = max(list(tag.items()), key=itemgetter(1))[0]
