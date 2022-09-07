@@ -35,12 +35,12 @@ def main(argv):
     data = tokenizer.tokenize(texts)
 
     # Get labels from NER
-    ner = ProductNER()
-    labels = ner.get_labels(tags)
+    NER = ProductNER()
+    labels = NER.get_labels(tags)
 
     # Compile NER network and train
-    ner.compile(tokenizer)
-    ner.train(data, labels, epochs=15)
+    NER.compile(tokenizer)
+    NER.train(data, labels, epochs=15)
 
 if __name__ == "__main__":
     main(sys.argv)
