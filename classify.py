@@ -148,7 +148,7 @@ class ProductClassifier(object):
                            optimizer='rmsprop',
                            metrics=['acc'])
 
-    def train(self, data, labels, validation_split=0.2, batch_size=128, epochs=100):
+    def train(self, data, labels, validation_split=0.2, batch_size=256, epochs=15):
         """Train classifier
         Args:
             data (np.array): 3D numpy array (n_samples, embedding_dim, tokenizer.max_sequence_length)
@@ -178,7 +178,7 @@ class ProductClassifier(object):
                        epochs=epochs, batch_size=batch_size)
         self.evaluate(x_val, y_val, batch_size)
 
-    def evaluate(self, x_test, y_test, batch_size=128):
+    def evaluate(self, x_test, y_test, batch_size=256):
         """Evaluate classifier
         Args:
             x_test (np.array): 3D numpy array (n_samples, embedding_dim, tokenizer.max_sequence_length)
