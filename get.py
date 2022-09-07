@@ -24,7 +24,7 @@ def process(row, tokenizer, classifier, ner):
     """
     # Classify
     data = tokenizer.tokenize([row['name'] + ' ' + row['description']])
-    categories = classifier.classify(data)[0]
+    categories = classify.classify(data)[0]
     row['category'] = max(list(categories.items()), key=itemgetter(1))[0]
 
     # Extract entities
