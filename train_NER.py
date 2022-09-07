@@ -1,6 +1,6 @@
 import sys, csv
 from tokenizer import WordTokenizer
-from ner import ProductNER
+from NER import ProductNER
 
 MAX_TEXTS = 1000000
 
